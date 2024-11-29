@@ -1,30 +1,30 @@
 # Denoising Audio Project 🎧
 
 ## Introduction
-Ce projet vise à débruiter des enregistrements de voix en estimant le signal vocal d'origine à partir de signaux bruités contenant des bruits d'ambiance de rue. L'objectif est de restaurer une voix claire à partir de données avec un **SNR (Signal to Noise Ratio)** compris entre 0 et 20 dB.
+This project aims to denoise voice recordings by estimating the original speech signal from noisy audio containing street ambient noise. The goal is to restore clear speech from data with an **SNR (Signal-to-Noise Ratio)** between 0 and 20 dB.
 
-## Structure des données
-Les données sont organisées comme suit :  
-- **Train** :  
-  - `audio/voice_origin/train` : Enregistrements de voix sans bruit (voix d'origine).  
-  - `audio/denoising/train` : Enregistrements de voix bruités (ambiance de rue).  
-  - Les fichiers des deux dossiers correspondent par leur nom.  
+## Data Structure
+The data is organized as follows:  
+- **Train**:  
+  - `audio/voice_origin/train`: Clean voice recordings (original speech).  
+  - `audio/denoising/train`: Noisy voice recordings (street ambiance).  
+  - Files in both directories correspond by name.  
 
-- **Test** :  
-  - `audio/voice_origin/test` : Enregistrements propres (ensemble de test).  
-  - `audio/denoising/test` : Enregistrements bruités (ensemble de test).  
+- **Test**:  
+  - `audio/voice_origin/test`: Clean recordings (test set).  
+  - `audio/denoising/test`: Noisy recordings (test set).  
 
-- **Ensembles réduits** :  
-  - `audio/voice_origin/train_small` et `audio/denoising/train_small` : Sous-ensemble pour effectuer des essais rapides.
+- **Reduced Sets**:  
+  - `audio/voice_origin/train_small` and `audio/denoising/train_small`: Subset for quick testing.
 
-## Objectif
-Estimer le signal vocal propre à partir d’un signal bruité tout en optimisant les métriques suivantes :  
-- **PESQ (Perceptual Evaluation of Speech Quality)** : Évalue la qualité perceptuelle de la voix estimée.  
-- **STOI (Short-Time Objective Intelligibility)** : Évalue l’intelligibilité de la voix.
+## Objective
+Estimate the clean speech signal from noisy audio while optimizing the following metrics:  
+- **PESQ (Perceptual Evaluation of Speech Quality)**: Evaluates the perceptual quality of the estimated speech.  
+- **STOI (Short-Time Objective Intelligibility)**: Assesses the intelligibility of the estimated speech.
 
 ## Installation
-1. Clonez ce dépôt :  
+1. Clone this repository:  
    ```bash
-   git clone <url_du_repo>
+   git clone <repo_url>
    cd denoising
    ```
