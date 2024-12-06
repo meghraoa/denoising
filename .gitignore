@@ -151,6 +151,7 @@ remote_training*
 __kaggle_login.py
 configuration.py
 shared.py
+__nb*
 
 # mypy
 .mypy_cache/
