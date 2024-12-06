@@ -12,7 +12,7 @@ from pathlib import Path
 
 ROOT_DIR = Path(__file__).parent
 OUTPUT_FOLDER_NAME = "__output"
-DATA_PATH = "kaggle/input/source-separation"
+DATA_PATH = "/kaggle/input/source-separation"
 
 def _get_parser(parser = None):
     if parser is None:
