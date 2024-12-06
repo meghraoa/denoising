@@ -92,8 +92,8 @@ def _compute_loss(criterion, signal_pred, signal, noise_pred, noise):
 class DumbModel(nn.Module):
     def __init__(self):
         super(DumbModel, self).__init__()
-        self.fc1 = nn.Linear(80000, 40000)
-        self.fc2 = nn.Linear(80000, 40000)
+        self.fc1 = nn.Linear(80000, 80000)
+        self.fc2 = nn.Linear(80000, 80000)
 
     def forward(self, x):
         signal_pred = self.fc1(x)
