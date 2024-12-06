@@ -12,7 +12,7 @@ from pathlib import Path
 
 ROOT_DIR = Path(__file__).parent
 OUTPUT_FOLDER_NAME = "__output"
-DATA_PATH = "/kaggle/input/source-separation"
+DATA_PATH = "data/source_separation"
 
 def _get_parser(parser = None):
     if parser is None:
@@ -109,7 +109,7 @@ def main(argv):
 
     logging.info(f"Training dumb experiment on device {device}...")
 
-    data_path = f'{DATA_PATH}/source_separation/train_small'  # Remplace par ton chemin de données
+    data_path = f'{DATA_PATH}/train_small'
     save_path = "models/model.pth"
     log_dir = "runs/dumb_experiment"
 
