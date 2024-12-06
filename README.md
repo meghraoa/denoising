@@ -1,30 +1,10 @@
-# Denoising Audio Project 🎧
+# Source Separation 🎧
 
-## Introduction
-This project aims to denoise voice recordings by estimating the original speech signal from noisy audio containing street ambient noise. The goal is to restore clear speech from data with an **SNR (Signal-to-Noise Ratio)** between 0 and 20 dB.
+The goal of this project is to jointly estimate the voice component and the noise component of an audio recording. For this project, you have:
 
-## Data Structure
-The data is organized as follows:  
-- **Train**:  
-  - `audio/voice_origin/train`: Clean voice recordings (original speech).  
-  - `audio/denoising/train`: Noisy voice recordings (street ambiance).  
-  - Files in both directories correspond by name.  
+## Training Data
+- A folder containing numbered subfolders (e.g., 0001 or 1256).
+- Inside each subfolder, you will find three `.wav` files: `mix_snr_XX.wav`, `voice.wav`, and `noise.wav`.
+- `voice.wav` and `noise.wav` are the ground truth files to estimate. `mix_snr_XX.wav` is the mixture of both sources, with an SNR of XX for the voice component (and -XX for the noise component).
 
-- **Test**:  
-  - `audio/voice_origin/test`: Clean recordings (test set).  
-  - `audio/denoising/test`: Noisy recordings (test set).  
-
-- **Reduced Sets**:  
-  - `audio/voice_origin/train_small` and `audio/denoising/train_small`: Subset for quick testing.
-
-## Objective
-Estimate the clean speech signal from noisy audio while optimizing the following metrics:  
-- **PESQ (Perceptual Evaluation of Speech Quality)**: Evaluates the perceptual quality of the estimated speech.  
-- **STOI (Short-Time Objective Intelligibility)**: Assesses the intelligibility of the estimated speech.
-
-## Installation
-1. Clone this repository:  
-   ```bash
-   git clone <repo_url>
-   cd denoising
-   ```
+The test set is organized in the same way.
