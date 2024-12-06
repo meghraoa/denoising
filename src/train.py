@@ -6,8 +6,20 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 import logging
-from remote_training import get_parser
+import argparse
 import sys
+from pathlib import Path
+
+ROOT_DIR = Path(__file__).parent
+OUTPUT_FOLDER_NAME = "__output"
+
+def _get_parser(parser = None):
+    if parser is None:
+        parser = argparse.ArgumentParser(description="Train a model")
+    parser.add_argument("-e", "--exp", nargs="+", type=int, required=True, help="Experiment id")
+    parser.add_argument("-o", "--output-dir", type=str, default=ROOT_DIR/OUTPUT_FOLDER_NAME, help="Output directory")
+    parser.add_argument("--cpu", action="store_true", help="Force CPU")
+    return parser
 
 def train(
         model,
@@ -87,9 +99,9 @@ class DumbModel(nn.Module):
         noise_pred = self.fc2(x)
         return signal_pred, noise_pred
 
-# Fonction main pour tester l'entraînement
+# TEST
 def main(argv):
-    parser = get_parser()
+    parser = _get_parser()
     args = parser.parse_args(argv)
 
     device = "cpu" if args.cpu else ("cuda" if torch.cuda.is_available() else "cpu")
