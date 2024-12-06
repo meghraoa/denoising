@@ -1,6 +1,9 @@
 # Data
 data/
 
+# TensorBoard
+runs/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -142,6 +145,12 @@ venv.bak/
 
 # mkdocs documentation
 /site
+
+# Remote training
+remote_training*
+__kaggle_login.py
+configuration.py
+shared.py
 
 # mypy
 .mypy_cache/
