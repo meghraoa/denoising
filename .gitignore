@@ -152,6 +152,7 @@ __kaggle_login.py
 configuration.py
 shared.py
 __nb*
+__tmp*
 
 # mypy
 .mypy_cache/

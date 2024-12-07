@@ -9,6 +9,7 @@ import logging
 import argparse
 import sys
 from pathlib import Path
+from models import BaselineModel
 
 ROOT_DIR = Path(__file__).parent
 OUTPUT_FOLDER_NAME = "__output"
@@ -117,7 +118,7 @@ def main(argv):
     train_loader = get_dataloader(data_path, batch_size=8, shuffle=True)
 
     # Initialisation du modèle, de la fonction de perte et de l'optimiseur
-    model = DumbModel().to(device)
+    model = BaselineModel()
     criterion = nn.MSELoss()  # Perte MSE
     optimizer = optim.Adam(model.parameters(), lr=0.001)
 
